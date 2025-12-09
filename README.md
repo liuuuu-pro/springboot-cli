@@ -30,8 +30,6 @@
 | 构建工具    | Maven 3.9+                            |
 | 容器部署    | Docker Compose                        |
 
----
-
 ## ⚙️ 项目结构
 
 ```
@@ -45,8 +43,6 @@ springboot-cli
  ├── docker/                    # Docker Compose 配置
  └── docs/                      # 技术文档、设计说明
 ```
-
----
 
 ## 🔧 快速开始
 
@@ -96,10 +92,5 @@ docs: 完善README文档
 |------|----------------------------------------------------------------------------------------------|
 | 项目主页 | [https://github.com/liuuuu-pro/springboot-cli](https://github.com/liuuuu-pro/springboot-cli) |
 | 作者邮箱 | liuuuu-pro@mailuuuu.com                                                          |
-                                                                        |
 | Issue反馈 | 欢迎在 GitHub 提交 Issue                                                                          |
-
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourname/springboot-cli&type=Date)](https://star-history.com/#yourname/springboot-cli&Date)
 
