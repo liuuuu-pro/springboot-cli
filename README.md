@@ -91,6 +91,6 @@ docs: 完善README文档
 | 渠道 | 信息                                                                                           |
 |------|----------------------------------------------------------------------------------------------|
 | 项目主页 | [https://github.com/liuuuu-pro/springboot-cli](https://github.com/liuuuu-pro/springboot-cli) |
-| 作者邮箱 | liuuuu-pro@mailuuuu.com                                                          |
+| 作者邮箱 | liujiazhong0618@gmail.com                                                          |
 | Issue反馈 | 欢迎在 GitHub 提交 Issue                                                                          |
 
