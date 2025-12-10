@@ -1,0 +1,24 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: service-ai
+  mvc:
+    servlet:
+      path: /ai
+  ai:
+    model:
+      chat: none
+      image: none
+      embedding: none
+      moderation: none
+      audio:
+        transcription: none
+        speech: none
+
+cli:
+  ai:
+    model:
+      base-url: https://ark.cn-beijing.volces.com/api/v3
+      completions-path: /chat/completions
+      simple-api-key: 4cdb****

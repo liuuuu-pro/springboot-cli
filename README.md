@@ -1,36 +1,37 @@
-# 🌱 SpringBoot-CLI
+# SpringBoot-CLI
 
-> 一款企业级 **Spring Boot + Spring Cloud 微服务脚手架**，集成最新主流中间件和最佳实践。
+> 一款企业级 **Spring Boot + Spring Cloud + Spring AI 微服务脚手架**，集成最新主流中间件和最佳实践。
 
 
-## 🚀 项目简介
+## 项目简介
 
-该项目致力于提供一个 **最新的、可快速上手的企业级微服务开发模板**。集成了最新的 **SpringBoot4 + SpringCloud2025** 技术体系，内置注册中心、配置中心、认证、日志、限流等基础设施，帮助开发者快速构建微服务体系。
+该项目致力于提供一个 **最前沿的、可快速上手的企业级微服务开发模板**。集成了最新的 **JDK25 + SpringBoot4 + SpringCloud2025** 技术体系，内置注册中心、配置中心、认证、日志、限流等基础设施，帮助开发者快速构建微服务体系。
 
-## 🎯 核心特性
+## 核心特性
 
-- ✅ 基于 **Spring Boot 4.0.x** 与 **Spring Cloud 2025.x**
-- ⚙️ 支持 **Nacos 注册中心 & 配置中心**
-- 💾 集成 **MySQL + Redis**
-- 🧩 内置 **统一异常、日志、响应规范**
-- 🔐 集成 **JWT 认证**
-- 🐳 **Docker Compose** 一键启动所有服务
+- 基于 **JDK25**
+- 集成 **Spring Boot 4.0.0**、 **Spring Cloud 2025.1.0**、 **Spring AI 1.1.2**
+- 集成 **Spring Cloud Alibaba 2025.1.0.x（官方待适配）**
+- 集成 **MySQL + Redis**
+- 内置 **统一异常、日志、响应规范**
+- 集成 **JWT 认证**
+- **Docker Compose** 一键启动所有服务
 
-## 🏗️ 技术栈
+## 技术栈
 
-| 分类      | 技术                                    |
-|---------|---------------------------------------|
-| 核心框架    | Spring Boot 4.0.x、Spring Cloud 2025.x |
-| Alibaba | Spring Cloud Alibaba 2025.0.0.x       |
-| 数据存储    | MySQL 8.x                             |
-| 缓存中间件   | Redis 7.x                             |
-| 接口文档    | Swagger3 (Knife4j)                    |
-| 服务调用    | OpenFeign                             |
-| 限流保护    | Sentinel                              |
-| 构建工具    | Maven 3.9+                            |
-| 容器部署    | Docker Compose                        |
+| 分类      | 技术                                      |
+|---------|-----------------------------------------|
+| 核心框架    | Spring Boot 4.0.0、Spring Cloud 2025.1.0 |
+| Alibaba | Spring Cloud Alibaba 2025.1.0.x         |
+| 数据存储    | MySQL 8.x                               |
+| 缓存中间件   | Redis 7.x                               |
+| 接口文档    | Swagger3 (Knife4j)                      |
+| 服务调用    | OpenFeign                               |
+| 限流保护    | Sentinel                                |
+| 构建工具    | Maven 3.9+                              |
+| 容器部署    | Docker Compose                          |
 
-## ⚙️ 项目结构
+## 项目结构
 
 ```
 springboot-cli
@@ -38,15 +39,14 @@ springboot-cli
  │   ├── common-core            # 通用工具类、DTO、异常体系
  │   ├── common-redis           # Redis 封装
  ├── gateway/                   # 服务网关
- ├── order-service/             # 订单服务
- ├── user-service/              # 用户中心服务
+ ├── service-ai/                # AI服务
+ ├── service-order/             # 订单服务
+ ├── service-user/              # 用户中心服务
  ├── docker/                    # Docker Compose 配置
  └── docs/                      # 技术文档、设计说明
 ```
 
-## 🔧 快速开始
-
-### 1️⃣ 环境准备
+## 环境准备
 
 | 组件 | 版本   | 说明 |
 |------|------|------|
@@ -56,9 +56,9 @@ springboot-cli
 | Redis | 7.0+ | 缓存 |
 | Docker | 24+  | 一键容器启动环境 |
 
-## 🤝 贡献指南
+## 贡献指南
 
-欢迎任何形式的贡献 🙌  
+欢迎任何形式的贡献  
 请遵循以下流程：
 
 1. Fork 本仓库
@@ -73,11 +73,11 @@ fix: 修复Redis连接问题
 docs: 完善README文档
 ```
 
-## 📜 开源协议
+## 开源协议
 
 本项目基于 **Apache License 2.0** 开源，详情请阅读 [LICENSE](LICENSE)。
 
-## 💡 JetBrains 开源支持声明
+## JetBrains 开源支持声明
 
 本项目为遵循 [JetBrains Open Source License Support](https://www.jetbrains.com/community/opensource/#support) 条件的公开项目：
 - 仓库完全开放，源码可自由访问
@@ -86,7 +86,7 @@ docs: 完善README文档
 
 感谢 [JetBrains](https://www.jetbrains.com/?from=springboot-cli) 为本项目提供的优秀开发工具支持 ❤️
 
-## 💬 联系与社区
+## 联系与社区
 
 | 渠道 | 信息                                                                                           |
 |------|----------------------------------------------------------------------------------------------|
