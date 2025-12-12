@@ -3,8 +3,8 @@ package com.boot.cli.ai.service;
 import com.boot.cli.ai.domain.request.ai.ChatRequest;
 import com.boot.cli.ai.domain.vo.ai.ChatRespSimpleVO;
 
-public interface ChatService {
+public interface AiChatBaseService {
 
-    ChatRespSimpleVO chat(ChatRequest request);
+    ChatRespSimpleVO chatCompletions(ChatRequest request);
 
 }

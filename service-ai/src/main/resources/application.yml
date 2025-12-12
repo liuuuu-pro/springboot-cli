@@ -19,6 +19,12 @@ spring:
 cli:
   ai:
     model:
-      base-url: https://ark.cn-beijing.volces.com/api/v3
-      completions-path: /chat/completions
-      simple-api-key: 4cdb****
+      openai:
+        services:
+          doubao:
+            base-url: https://ark.cn-beijing.volces.com/api/v3
+            completions-path: /chat/completions
+            simple-api-key: 4cdb****
+      google:
+        api-key: A****
+        file-search-store-display-name: FSS_SERVICE_AI

@@ -2,7 +2,7 @@ package com.boot.cli.ai.domain.vo.ai;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
-import com.boot.cli.ai.domain.bo.ai.RespBO;
+import com.boot.cli.ai.domain.bo.spring.RespBO;
 import lombok.Builder;
 
 import java.util.List;

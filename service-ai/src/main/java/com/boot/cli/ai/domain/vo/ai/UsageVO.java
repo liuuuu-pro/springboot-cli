@@ -1,6 +1,6 @@
 package com.boot.cli.ai.domain.vo.ai;
 
-import com.boot.cli.ai.domain.bo.ai.RespMetadataUsageBO;
+import com.boot.cli.ai.domain.bo.spring.RespMetadataUsageBO;
 import lombok.Builder;
 
 @Builder
