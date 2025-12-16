@@ -1,0 +1,21 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: service-order
+  mvc:
+    servlet:
+      path: /order
+  config:
+    import:
+      - nacos:boot-common.yml?group=DEFAULT_GROUP&refreshEnabled=true
+      - nacos:service-order.yml?group=DEFAULT_GROUP&refreshEnabled=true
+  cloud:
+    nacos:
+      server-addr: localhost:8080
+      username: nacos
+      password: nacos
+      config:
+        namespace: boot-cli
+      discovery:
+        namespace: boot-cli

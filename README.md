@@ -39,9 +39,9 @@ springboot-cli
  │   ├── common-core            # 通用工具类、DTO、异常体系
  │   ├── common-redis           # Redis 封装
  ├── gateway/                   # 服务网关
- ├── service-ai/                # AI服务
- ├── service-order/             # 订单服务
- ├── service-user/              # 用户中心服务
+ ├── service-ai/                # AI服务，9000
+ ├── service-order/             # 订单服务，9001
+ ├── service-user/              # 用户中心服务，9002
  ├── docker/                    # Docker Compose 配置
  └── docs/                      # 技术文档、设计说明
 ```
@@ -55,6 +55,15 @@ springboot-cli
 | MySQL | 8.0+ | 数据库 |
 | Redis | 7.0+ | 缓存 |
 | Docker | 24+  | 一键容器启动环境 |
+
+#### 部署 Nacos (Windows)
+1. 下载最新版本 [nacos-server-3.1.1.tar.gz](https://github.com/alibaba/nacos/releases)
+2. 解压为 nacos，进入 nacos/bin，运行 cmd，执行 startup.cmd -m standalone
+3. 通过 PowerShell 执行下方指令生成：nacos.core.auth.plugin.nacos.token.secret.key
+    ```aiignore
+    [Convert]::ToBase64String((1..32 | ForEach-Object {Get-Random -Maximum 256}))[Convert]::ToBase64String((1..32 | ForEach-Object {Get-Random -Maximum 256}))
+    ```
+4. 输入 http://localhost:8080 进入 nacos 控制台
 
 ## 贡献指南
 
