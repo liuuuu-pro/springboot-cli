@@ -38,7 +38,7 @@ springboot-cli
  ├── common/                    # 公共模块
  │   ├── common-core            # 通用工具类、DTO、异常体系
  │   ├── common-redis           # Redis 封装
- ├── gateway/                   # 服务网关
+ ├── gateway/                   # 服务网关，9080
  ├── service-ai/                # AI服务，9000
  ├── service-order/             # 订单服务，9001
  ├── service-user/              # 用户中心服务，9002
