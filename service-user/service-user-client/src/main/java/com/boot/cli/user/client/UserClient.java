@@ -5,10 +5,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "service-user", path = "/user")
+@FeignClient(name = "service-user")
 public interface UserClient {
 
-    @GetMapping("/by-code")
+    @GetMapping("/user/by-code")
     UserInfoVO getByUserCode(@RequestParam("userCode") String userCode);
 
 }

@@ -11,8 +11,16 @@
         <relativePath/>
     </parent>
 
+    <groupId>com.boot</groupId>
     <artifactId>service-ai</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>service-ai-model</module>
+        <module>service-ai-client</module>
+        <module>service-ai-server</module>
+    </modules>
 
     <properties>
         <spring-ai.version>1.1.2</spring-ai.version>

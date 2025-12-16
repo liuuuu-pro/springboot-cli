@@ -6,26 +6,17 @@
 
     <parent>
         <groupId>com.boot</groupId>
-        <artifactId>service-order</artifactId>
+        <artifactId>service-ai</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>service-order-server</artifactId>
+    <artifactId>service-ai-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.boot</groupId>
-            <artifactId>service-user-client</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.boot</groupId>
-            <artifactId>common-core</artifactId>
+            <artifactId>service-ai-model</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

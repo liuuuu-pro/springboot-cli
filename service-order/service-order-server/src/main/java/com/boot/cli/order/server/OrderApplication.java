@@ -2,9 +2,9 @@ package com.boot.cli.order.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@ComponentScan("com.boot.cli.user.client")
+@EnableFeignClients(basePackages = "com.boot.cli.user.client")
 @SpringBootApplication
 public class OrderApplication {
 

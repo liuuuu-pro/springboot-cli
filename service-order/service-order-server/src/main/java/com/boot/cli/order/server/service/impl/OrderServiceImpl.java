@@ -1,5 +1,6 @@
 package com.boot.cli.order.server.service.impl;
 
+import com.boot.cli.common.core.util.Json;
 import com.boot.cli.order.server.service.OrderService;
 import com.boot.cli.user.client.UserClient;
 import com.boot.cli.user.model.vo.UserInfoVO;
@@ -16,8 +17,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void createOrder() {
+        log.info("create order...");
         UserInfoVO adminInfo = userClient.getByUserCode("admin");
-        // todo
+        log.info("adminInfo:{}", Json.to(adminInfo));
     }
 
 }
