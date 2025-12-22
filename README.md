@@ -5,31 +5,26 @@
 
 ## 项目简介
 
-该项目致力于提供一个 **最前沿的、可快速上手的企业级微服务开发模板**。集成了最新的 **JDK25 + SpringBoot4 + SpringCloud2025** 技术体系，内置注册中心、配置中心、认证、日志、限流等基础设施，帮助开发者快速构建微服务体系。
+该项目致力于提供一个 **最前沿的、可快速上手的企业级微服务开发模板**。以 **AI** 为核心，集成了最新的 **JDK25 + SpringBoot4 + SpringCloud2025** 技术体系，内置注册中心、配置中心、认证、日志、限流等基础设施，帮助开发者快速构建微服务体系。
 
 ## 核心特性
 
 - 基于 **JDK25**
-- 集成 **Spring Boot 4.0.0**、 **Spring Cloud 2025.1.0**、 **Spring AI 1.1.2**
-- 集成 **Spring Cloud Alibaba 2025.1.0.x（官方待适配）**
+- 核心 **Spring AI 2.0.0**
+- 集成 **Spring Boot 4.0.0**、 **Spring Cloud 2025.1.0**、 **Spring Cloud Alibaba 2025.1.0.x（官方待适配）**
 - 集成 **MySQL + Redis**
-- 内置 **统一异常、日志、响应规范**
-- 集成 **JWT 认证**
-- **Docker Compose** 一键启动所有服务
 
 ## 技术栈
 
-| 分类      | 技术                                      |
-|---------|-----------------------------------------|
-| 核心框架    | Spring Boot 4.0.0、Spring Cloud 2025.1.0 |
-| Alibaba | Spring Cloud Alibaba 2025.1.0.x         |
-| 数据存储    | MySQL 8.x                               |
-| 缓存中间件   | Redis 7.x                               |
-| 接口文档    | Swagger3 (Knife4j)                      |
-| 服务调用    | OpenFeign                               |
-| 限流保护    | Sentinel                                |
-| 构建工具    | Maven 3.9+                              |
-| 容器部署    | Docker Compose                          |
+| 分类   | 核心框架                                                                    |
+|------|-------------------------------------------------------------------------|
+| AI   | Spring AI 2.0.0                                                         | 
+| 核心框架 | Spring Boot 4.0.0、Spring Cloud 2025.1.0、Spring Cloud Alibaba 2025.1.0.x |
+| 数据存储 | MySQL 8.x                                                               |
+| 缓存组件 | Redis 7.x                                                               | |
+| 限流保护 | Sentinel                                                                |
+| 构建工具 | Maven 3.9+                                                              |
+| 容器部署 | Docker Compose                                                          |
 
 ## 项目结构
 

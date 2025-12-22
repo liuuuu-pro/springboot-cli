@@ -1,12 +1,12 @@
 package com.boot.cli.ai.server.service.mapper;
 
 import com.boot.cli.common.core.exception.ServiceException;
-import com.boot.cli.common.core.util.Json;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import tools.jackson.databind.ObjectMapper;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,50 +14,62 @@ import java.util.Map;
 @Component
 public class GoogleAiSchemaMapper {
 
-    @Autowired
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
+
+    public GoogleAiSchemaMapper(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 
     public String schemaToString(Map<String, Object> schema) {
+        if (schema == null) {
+            throw new ServiceException("Schema不能为空");
+        }
+
         try {
-            Map<String, Object> newSchema = cloneSchema(schema);
-            schemaUpperCase(newSchema);
-            return objectMapper.writeValueAsString(newSchema);
+            Map<String, Object> processedSchema = processMap(schema);
+            return objectMapper.writeValueAsString(processedSchema);
         } catch (Exception e) {
-            log.error("Schema转换异常:{}", Json.to(schema), e);
+            log.error("Schema转换异常", e);
             throw new ServiceException("Schema转换异常");
         }
     }
 
-    private Map<String, Object> cloneSchema(Map<String, Object> schema) {
-        try {
-            String json = objectMapper.writeValueAsString(schema);
-            return objectMapper.readValue(json, Map.class);
-        } catch (Exception e) {
-            log.error("Schema处理异常:{}", Json.to(schema), e);
-            throw new ServiceException("Schema处理异常");
-        }
-    }
+    private Map<String, Object> processMap(Map<String, Object> source) {
+        Map<String, Object> target = new LinkedHashMap<>(source.size());
 
-    private static void schemaUpperCase(Map<String, Object> map) {
-        if (map == null) return;
-
-        for (Map.Entry<String, Object> entry : map.entrySet()) {
+        for (Map.Entry<String, Object> entry : source.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
 
-            if ("type".equals(key) && value instanceof String) {
-                entry.setValue(((String) value).toUpperCase());
-            } else if (value instanceof Map) {
-                schemaUpperCase((Map<String, Object>) value);
-            } else if (value instanceof List) {
-                List<?> list = (List<?>) value;
-                for (Object item : list) {
-                    if (item instanceof Map) {
-                        schemaUpperCase((Map<String, Object>) item);
-                    }
-                }
+            if ("type".equals(key) && value instanceof String str) {
+                target.put(key, str.toUpperCase());
+            } else {
+                target.put(key, processValue(value));
             }
         }
+        return target;
     }
 
+    private Object processValue(Object value) {
+        if (value instanceof Map<?, ?> map) {
+            return processMap(castToMap(map));
+        }
+        if (value instanceof List<?> list) {
+            return processList(list);
+        }
+        return value;
+    }
+
+    private List<Object> processList(List<?> list) {
+        List<Object> newList = new ArrayList<>(list.size());
+        for (Object item : list) {
+            newList.add(processValue(item));
+        }
+        return newList;
+    }
+
+    @SuppressWarnings("unchecked")
+    private Map<String, Object> castToMap(Map<?, ?> map) {
+        return (Map<String, Object>) map;
+    }
 }
