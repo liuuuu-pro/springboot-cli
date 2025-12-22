@@ -2,7 +2,6 @@ package com.boot.cli.ai.server.domain.request.ai;
 
 import com.boot.cli.ai.server.domain.bo.spring.MessageBO;
 import com.boot.cli.common.core.exception.ServiceException;
-import com.google.genai.types.GenerateContentConfig;
 import jakarta.validation.constraints.NotEmpty;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.MessageType;
@@ -23,22 +22,14 @@ import java.util.Objects;
 public record ChatRequest(@NotEmpty String model,
                           @NotEmpty List<MessageBO> messages,
                           ResponseFormat responseFormat,
-                          Double temperature,
-                          String reasoningEffort,
-                          String fileSearchStoreName) {
+                          Double temperature) {
 
     public OpenAiChatOptions openaiOptions() {
         OpenAiChatOptions options = new OpenAiChatOptions();
         options.setModel(modelName());
         options.setResponseFormat(responseFormat);
         options.setTemperature(temperature);
-        options.setReasoningEffort(reasoningEffort);
         return options;
-    }
-
-    public GenerateContentConfig googleContentConfig() {
-        // todo
-        return GenerateContentConfig.builder().build();
     }
 
     public List<Message> openaiMessages() {

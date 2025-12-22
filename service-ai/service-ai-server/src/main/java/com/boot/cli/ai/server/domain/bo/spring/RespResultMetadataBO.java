@@ -1,4 +1,4 @@
-package com.boot.cli.ai.model.bo.spring;
+package com.boot.cli.ai.server.domain.bo.spring;
 
 import lombok.Data;
 
