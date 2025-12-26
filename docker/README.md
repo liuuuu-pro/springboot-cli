@@ -1,8 +1,16 @@
 # Docker 本地开发环境
 
-本目录用于管理 **开发所需的基础服务**，基于 **Docker Compose**，当前已集成 MySQL 8.x，后续持续扩展 Redis、Kafka、Nginx 等。
+本目录用于管理 **开发所需的基础服务**，基于 **Docker Compose**。
 
 ---
+
+## 当前集成
+
+| Component  | Version | Notes |
+|------------|---------|------|
+| MySQL      | 8.0.36  |  |
+| PostgreSQL | 18+     |  |
+
 
 ## 目录结构
 
