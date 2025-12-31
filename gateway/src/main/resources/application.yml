@@ -5,13 +5,15 @@ spring:
     name: gateway
   cloud:
     gateway:
-      routes:
-        - id: user_route
-          uri: lb://service-user
-          predicates:
-            - Path=/user/**
-          filters:
-            - StripPrefix=1
+      server:
+        webflux:
+          routes:
+            - id: user_route
+              uri: lb://service-user
+              predicates:
+                - Path=/user/**
+              filters:
+                - StripPrefix=1
     nacos:
       server-addr: localhost:8848
       username: nacos
@@ -24,3 +26,13 @@ spring:
     import:
       - nacos:boot-common.yml?group=DEFAULT_GROUP&refreshEnabled=true
       - nacos:gateway.yml?group=DEFAULT_GROUP&refreshEnabled=true
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: debug
+    reactor:
+      netty:
+        http:
+          client: debug
