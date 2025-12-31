@@ -54,7 +54,7 @@ springboot-cli
 2. 解压为 nacos，进入 nacos/bin，运行 cmd，执行 startup.cmd -m standalone
 3. 通过 PowerShell 执行下方指令生成：nacos.core.auth.plugin.nacos.token.secret.key
     ```aiignore
-    [Convert]::ToBase64String((1..32 | ForEach-Object {Get-Random -Maximum 256}))[Convert]::ToBase64String((1..32 | ForEach-Object {Get-Random -Maximum 256}))
+    [Convert]::ToBase64String((1..32 | ForEach-Object {Get-Random -Maximum 256}))
     ```
 4. 输入 http://localhost:8080 进入 nacos 控制台
 
