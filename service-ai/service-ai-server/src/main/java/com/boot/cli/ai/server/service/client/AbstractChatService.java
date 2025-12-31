@@ -18,6 +18,7 @@ import com.boot.cli.common.core.util.NumUtils;
 import com.google.genai.types.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.mcp.SyncMcpToolCallbackProvider;
 import org.springframework.ai.openai.api.ResponseFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,12 +37,15 @@ public class AbstractChatService implements AiChatBaseService {
     protected Map<String, ChatClient> openaiCompatibleClients;
     @Autowired
     protected GoogleAiSchemaMapper googleAiSchemaMapper;
+    @Autowired
+    private SyncMcpToolCallbackProvider mcpToolCallbackProvider;
 
     @Override
     public ChatRespSimpleVO chatCompletions(ChatRequest request) {
         ChatClient chatClient = openaiCompatibleClients.get(request.serviceName());
         List<RespBO> contents = chatClient.prompt()
                 .messages(request.openaiMessages())
+                .toolCallbacks(mcpToolCallbackProvider.getToolCallbacks())
                 .options(request.openaiOptions())
                 .stream()
                 .chatResponse()

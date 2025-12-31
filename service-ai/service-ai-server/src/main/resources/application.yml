@@ -12,7 +12,13 @@ spring:
       audio:
         transcription: none
         speech: none
-
+    mcp:
+      client:
+        streamable-http:
+          connections:
+            service-ai-mcp:
+              url: http://localhost:9003
+              endpoint: /mcp
 cli:
   ai:
     model:

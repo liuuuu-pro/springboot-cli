@@ -1,0 +1,18 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: service-ai-mcp
+  ai:
+    mcp:
+      server:
+        enabled: true
+        protocol: STATELESS
+        name: service-ai-mcp
+        version: 1.0.0
+        streamable-http:
+          mcp-endpoint: /mcp
+      client:
+        enabled: true
+        stdio:
+          servers-configuration: classpath:mcp-servers.json

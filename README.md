@@ -55,6 +55,7 @@ springboot-cli
 │   └── common-redis            # Redis abstraction
 ├── gateway/                    # API Gateway (port: 9080)
 ├── service-ai/                 # AI service (port: 9000)
+├── service-ai-mcp/             # MCP Server (port: 9003)
 ├── service-order/              # Order service (port: 9001)
 ├── service-user/               # User service (port: 9002)
 ├── docker/                     # Docker Compose configurations
